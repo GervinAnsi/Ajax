@@ -12,8 +12,8 @@ namespace Ajax.Migrations
         {
 
             migrationBuilder.DropForeignKey(
-         name: "FK_Cities_Countries_CountryId",
-         table: "CITIES");
+                name: "FK_Cities_Countries_CountryId",
+                table: "CITIES");
 
             migrationBuilder.AddForeignKey(
                 name: "FK_Cities_Countries_CountryId",
@@ -29,6 +29,17 @@ namespace Ajax.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
 
+            migrationBuilder.DropForeignKey(
+                name: "FK_Cities_Countries_CountryId",
+                table: "CITIES");
+
+            migrationBuilder.AddForeignKey(
+                name: "FK_Cities_Countries_CountryId",
+                table: "CITIES",
+                column: "CountryId",
+                principalTable: "Countries",
+                principalColumn: "Id",
+                onDelete: ReferentialAction.Cascade);
         }
     }
 }
