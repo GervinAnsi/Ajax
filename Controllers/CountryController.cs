@@ -113,6 +113,27 @@ namespace Ajax.Controllers
             return RedirectToAction(nameof(Index));
         }
 
+        public JsonResult GetCountries()
+        {
+            var lstCountries = _context.Countries
+                .Select(ct => new SelectListItem
+                {
+                    Value = ct.Id.ToString(),
+                    Text = ct.Name
+                })
+                .ToList();
+
+            // Add default item
+            var defItem = new SelectListItem
+            {
+                Value = "",
+                Text = "---Select Country---"
+            };
+
+            lstCountries.Insert(0, defItem);
+
+            return Json(lstCountries);
+        }
 
     }
 }

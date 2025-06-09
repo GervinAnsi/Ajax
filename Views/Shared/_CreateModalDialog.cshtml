@@ -16,9 +16,14 @@
 
             </div>
 
-         <div class="modal-footer">
-             <button type="button" class="btn btn-danger" data-icon="Close" data-bs-dismiss="modal">Close</button>
-         </div>
+            <div class="modal-footer">
+                @* <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button> *@
+
+                <div class="btn-group ms-auto">
+                    <button id="dupBackBtn" type="button" class="btn btn-danger" data-bs-dismiss="modal">Back</button>
+                    <button id="dupSubmitBtn" type="button" class="btn btn-primary" onclick="submitModalForm()">Save</button>
+                </div>
+            </div>
         </div>
 
     </div>
